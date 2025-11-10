@@ -1,2 +1,2 @@
 # AgileEEG
-The code can be obtained after the paper is published.
+This PyTorch code implements the AgileEEG architecture. It features the GhostModule, representing the paper's "Agile Convolutional Block" (ACB), which uses a primary convolution for 'intrinsic' features and a 'cheap operation' (depthwise convolution) to generate 'ghost' features. These are concatenated to efficiently handle EEG redundancy. The main AgileEEG class assembles the full model: it starts with a temporal convolution, followed by a spatial (depthwise) convolution. This feeds into a residual block containing the GhostModule, which is then followed by average pooling and a final linear classification layer, as detailed in the paper.
